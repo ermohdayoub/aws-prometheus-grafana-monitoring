@@ -1,92 +1,89 @@
 AWS EC2 Monitoring Using Prometheus, Node Exporter & Grafana
+<p align="center"> <img src="https://img.shields.io/badge/AWS-EC2-orange?logo=amazon-aws" /> <img src="https://img.shields.io/badge/Monitoring-Prometheus-orange?logo=prometheus" /> <img src="https://img.shields.io/badge/Dashboard-Grafana-black?logo=grafana" /> <img src="https://img.shields.io/badge/Linux-Ubuntu-blue?logo=ubuntu" /> <img src="https://img.shields.io/badge/Node%20Exporter-Metrics-green" /> <img src="https://img.shields.io/badge/Project-Completed-success" /> <img src="https://img.shields.io/badge/DevOps-Tools-blue" /> </p>
+📌 Project Overview
 
-This project demonstrates a complete monitoring stack deployment on an AWS EC2 Ubuntu instance using Prometheus, Node Exporter, and Grafana.
+This project sets up a complete monitoring stack on an AWS EC2 Ubuntu instance using:
 
-  Setup Overview
+Prometheus for metric collection
+
+Node Exporter for system-level metrics
+
+Grafana for dashboards and visualization
+
+It demonstrates how to monitor CPU, memory, disk, network, and general server health in real time.
+
+🛠️ Setup Steps
 1. Install Prometheus
 
-Download latest Prometheus release
+Download latest release
 
-Extract and copy binaries
+Extract binaries
 
-Configure storage directory structure
+Configure storage paths
 
-Setup as a systemd service
+Create systemd service
+
+Enable and start Prometheus on port 9090
 
 2. Install Node Exporter
 
-Download and run Node Exporter service
+Download Node Exporter
 
-Exposes system metrics on port 9100
+Setup as a systemd service
+
+Metrics available on port 9100
 
 3. Configure Prometheus Scrape Targets
 
 Prometheus scrapes:
 
-Itself (:9090)
-
-Node Exporter (:9100)
-
+Target	Port
+Prometheus	9090
+Node Exporter	9100
 4. Install Grafana
 
 Add Grafana APT repo
 
-Install and enable Grafana service
+Install package
 
-Login on :3000 and add Prometheus as data source
+Enable Grafana service
+
+Access via http://<EC2-Public-IP>:3000
 
 5. Import Dashboards
 
-Imported Linux/EC2 dashboards to visualize:
+Imported EC2 / Linux dashboards to visualize:
 
-CPU usage
+CPU Utilization
 
-Memory usage
+Memory Usage
 
-Disk IO
+Load Average
 
-Load average
+Disk I/O
 
-Network throughput
+Network traffic
+
+Running processes
 
 📸 Screenshots
 1️⃣ EC2 Instance
-<img width="1919" height="875" alt="Screenshot 2025-11-17 194213" src="https://github.com/user-attachments/assets/55f68ac1-5e7f-4a4a-97c7-33aea09b2f43" />
-
+<img width="1919" height="875" alt="EC2" src="https://github.com/user-attachments/assets/55f68ac1-5e7f-4a4a-97c7-33aea09b2f43" />
 2️⃣ Prometheus UI
+<img width="1919" height="1019" alt="Prometheus UI" src="https://github.com/user-attachments/assets/db22db6b-762c-462c-a948-1267d010dc2f" />
+3️⃣ Prometheus Targets
+<img width="1919" height="1010" alt="Prometheus Targets" src="https://github.com/user-attachments/assets/bc521de3-9f56-407f-b642-8c5aed5b5be0" />
+4️⃣ Prometheus Query
+<img width="1919" height="1023" alt="Prometheus Query" src="https://github.com/user-attachments/assets/e696d49a-f6c1-48d4-ae45-5120c2edd029" />
+5️⃣ Node Exporter Metrics
+<img width="1919" height="1023" alt="Node Exporter" src="https://github.com/user-attachments/assets/74bb7f8b-c4c5-4d68-a8cc-bfbc70bc1dfa" />
+6️⃣ prometheus.yml
+<img width="1919" height="886" alt="Prometheus config" src="https://github.com/user-attachments/assets/a9f71353-72b6-42c7-816a-ce908c33a692" />
+7️⃣ Grafana Dashboard
+<img width="1919" height="1014" alt="Grafana Dashboard" src="https://github.com/user-attachments/assets/e566563c-db8e-43fa-b5f9-de921d1c2817" />
+🧰 Tech Stack
 
-
-<img width="1919" height="1019" alt="Screenshot 2025-11-17 200200" src="https://github.com/user-attachments/assets/db22db6b-762c-462c-a948-1267d010dc2f" />
-
-
-3️⃣ Prometheus Targets (All UP)
-
-
-<img width="1919" height="1010" alt="Screenshot 2025-11-17 194313" src="https://github.com/user-attachments/assets/bc521de3-9f56-407f-b642-8c5aed5b5be0" />
-
-4️⃣ Prometheus Metrics Query
-
-<img width="1919" height="1023" alt="Screenshot 2025-11-17 194430" src="https://github.com/user-attachments/assets/e696d49a-f6c1-48d4-ae45-5120c2edd029" />
-
-
-5️⃣ Node Exporter Metrics Page
-
-
-<img width="1919" height="1023" alt="Screenshot 2025-11-17 194454" src="https://github.com/user-attachments/assets/74bb7f8b-c4c5-4d68-a8cc-bfbc70bc1dfa" />
-
-6️⃣ prometheus.yml Configuration
-
-<img wid<img width="1919" height="886" alt="Screenshot 2025-11-17 194949" src="https://github.com/user-attachments/assets/a9f71353-72b6-42c7-816a-ce908c33a692" />
-
-
-
-7️⃣ Grafana Dashboard (EC2 Monitoring)
-<img width="1919" height="1014" alt="Screenshot 2025-11-17 195128" src="https://github.com/user-attachments/assets/e566563c-db8e-43fa-b5f9-de921d1c2817" />
-
-
-🧰 Technologies Used
-
-AWS EC2
+AWS EC2 (Ubuntu 24.04)
 
 Prometheus
 
@@ -94,26 +91,25 @@ Node Exporter
 
 Grafana
 
-Ubuntu Linux
+Systemd services
 
-Systemd Services
+Linux administration
 
-📚 Purpose
+🎯 What I Learned
 
-This project is a hands-on practice to demonstrate:
+Setting up a real monitoring stack
 
-Monitoring setup
+Configuring scrape jobs
 
-Metric collection
+Creating systemd services
 
-Visualization dashboards
+Working with dashboards
 
-Linux and system services
+Understanding observability basics
 
-DevOps observability tools
-
-📬 Author
+👤 Author
 
 Mohd Ayoub
-LinkedIn: https://www.linkedin.com/in/ermohdayoub/
-GitHub: ermohdayoub
+🔗 LinkedIn: https://www.linkedin.com/in/ermohdayoub/
+
+🐙 GitHub: ermohdayoub
