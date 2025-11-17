@@ -78,7 +78,6 @@ Network throughput
 
 <img wid<img width="1919" height="886" alt="Screenshot 2025-11-17 194949" src="https://github.com/user-attachments/assets/a9f71353-72b6-42c7-816a-ce908c33a692" />
 
-th="1919" height="868" alt="Screenshot 2025-11-17 194929" src="https://github.com/user-attachments/assets/8f942bbe-07ff-47c5-8edb-e994fbab06ec" />
 
 
 7️⃣ Grafana Dashboard (EC2 Monitoring)
