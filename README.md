@@ -1,4 +1,4 @@
-#AWS EC2 Monitoring Using Prometheus, Node Exporter & Grafana
+# AWS EC2 Monitoring Using Prometheus, Node Exporter & Grafana
 
 📌 Project Overview
 
