@@ -1,4 +1,5 @@
-AWS EC2 Monitoring Using Prometheus, Node Exporter & Grafana
+#AWS EC2 Monitoring Using Prometheus, Node Exporter & Grafana
+
 📌 Project Overview
 
 This project sets up a complete monitoring stack on an AWS EC2 Ubuntu instance using:
